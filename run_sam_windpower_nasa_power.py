@@ -522,7 +522,7 @@ def main():
     print()
 
     # Load turbine library once
-    lib_path = Path("data/Wind Turbines.csv")
+    lib_path = Path("data/Wind_Turbines.csv")
     df_lib = load_sam_turbine_library_csv(lib_path)
     if df_lib is None:
         print("  WARNING: Could not load turbine library; using generic curve fallback for all farms.")
