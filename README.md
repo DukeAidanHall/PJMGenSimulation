@@ -16,7 +16,6 @@ This project runs a 3-step wind workflow for PJM plants:
 - `code/compare_generation.py`
 - `data/3_2_Wind_Y2022.xlsx` (change if not testing for 2022)
 - `data/Wind_Turbines.csv`
-- `data/wind_farms_nasa_weather/` (update for wind outside of 2022)
 
 ---
 
@@ -31,13 +30,6 @@ Create `data/wind_2022_PJMfilled.xlsx` with one row per plant and at least these
 - `Longitude`
 - `Nameplate Capacity (MW)`
 - `Wind Annual Generation (MWh)`
-
-Brief guidance:
-- Use consistent `Plant Code` values across all files (same IDs as EIA where possible).
-- Keep latitude/longitude numeric decimal degrees.
-- Keep capacity in MW and annual generation in MWh.
-- Remove duplicate plant rows unless you intentionally model duplicates.
-
 ---
 
 ## Environment Setup
@@ -45,21 +37,17 @@ Brief guidance:
 From project root (`2022Wind`):
 
 ```bash
-python3 -m venv venv
+python -m venv venv
 source venv/bin/activate
 pip install pandas numpy requests openpyxl pysam tqdm
 ```
 
 ---
 
-## Run Order
-
-Always run from the project root directory (`2022Wind`), not from `code/`.
-
 ### 1) Download weather files
 
 ```bash
-python3 code/wind_weather.py
+python code/wind_weather.py
 ```
 
 What this does:
@@ -70,7 +58,7 @@ What this does:
 ### 2) Run SAM wind simulation
 
 ```bash
-python3 code/run_sam_windpower_nasa_power.py
+python code/run_sam_windpower_nasa_power.py
 ```
 
 What this does:
@@ -86,7 +74,7 @@ What this does:
 ### 3) Compare modeled vs actual annual generation
 
 ```bash
-python3 code/compare_generation.py
+python code/compare_generation.py
 ```
 
 Output:
