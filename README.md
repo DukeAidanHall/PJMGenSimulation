@@ -15,7 +15,7 @@ This project runs a 3-step wind workflow for PJM plants:
   (if your copy is named `run_sam_windpower_nasa.py`, use that filename instead)
 - `code/compare_generation.py`
 - `data/3_2_Wind_Y2022.xlsx` (change if not testing for 2022)
-- `data/Wind_Turbines.csv` (or `data/Wind Turbines.csv` depending on your local file name)
+- `data/Wind_Turbines.csv`
 - `data/wind_farms_nasa_weather/` (update for wind outside of 2022)
 
 ---
